@@ -1,0 +1,310 @@
+/* General Layout for Sidebar */
+body {
+  display: flex; /* Use flexbox for main layout */
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.sidebar {
+  width: 200px; /* Fixed width for the sidebar */
+  background-color: #333;
+  color: #fff;
+  padding-top: 20px;
+  height: 100vh; /* Full height sidebar */
+  position: fixed; /* Keep sidebar fixed while scrolling main content */
+  left: 0;
+  top: 0;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.main-content {
+  margin-left: 200px; /* Push main content to the right of the sidebar */
+  flex-grow: 1; /* Allow main content to take remaining space */
+}
+
+/* Sidebar Navigation */
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav ul li a {
+  display: block; /* Make the whole area clickable */
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-nav ul li a:hover {
+  background-color: #555;
+}
+
+/* Main Navigation (adjusted to differentiate from sidebar) */
+.main-nav {
+  /* Renamed 'nav' to 'main-nav' for clarity */
+  background: #555;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  /* Removed fixed positioning if any, as sidebar is fixed */
+}
+
+.main-nav ul {
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav ul li {
+  display: inline;
+  padding: 0 20px;
+}
+
+.main-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-nav ul li a:hover {
+  color: #77aaff;
+}
+
+/* Header */
+header {
+  background: #333;
+  color: #fff;
+  padding-top: 30px;
+  min-height: 100px;
+  border-bottom: #77aaff 3px solid;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff;
+  margin-bottom: 15px;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+h1,
+h2,
+h3 {
+  color: #333;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 40px 0;
+}
+
+/* Sections */
+section {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.skill-category {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-category ul li {
+  padding: 5px 0;
+}
+
+/* Education and Experience Items */
+.education-item,
+.experience-item {
+  /* Removed .project-item, .blog-item as they're now handled by gallery-item */
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.education-item h3,
+.experience-item h3 {
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.education-item p,
+.experience-item p {
+  margin-top: 0;
+  font-style: italic;
+}
+
+.education-item ul,
+.experience-item ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+/* Gallery Layout (used for both Gallery and Projects) */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* Responsive columns */
+  gap: 25px; /* Space between cards */
+  padding: 20px; /* Padding inside the grid container */
+  justify-content: center; /* Center items in the grid */
+}
+
+.gallery-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures image corners are rounded */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+}
+
+.gallery-item img {
+  width: 100%; /* Make image fill its container */
+  height: 200px; /* Fixed height for consistent image size */
+  object-fit: cover; /* Crop images to fit without distortion */
+  display: block; /* Remove extra space below image */
+}
+
+.item-description {
+  padding: 15px;
+  text-align: center;
+}
+
+.item-description p {
+  margin: 0;
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* Projects Specific Styling (within .gallery-item) */
+
+.gallery-item .item-details {
+  padding: 15px; /* Consistent padding with gallery descriptions */
+  text-align: center;
+}
+
+.gallery-item .item-details h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.gallery-item .project-description {
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.5;
+}
+
+.gallery-item .project-links {
+  display: flex; /* Arrange links side-by-side */
+  justify-content: center; /* Center the links */
+  gap: 10px; /* Space between the links */
+  margin-top: 15px;
+  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+}
+
+.gallery-item .project-link {
+  display: inline-flex; /* Keep icon and text together */
+  align-items: center; /* Vertically align icon and text */
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* Prevent text from wrapping inside the button */
+}
+
+.gallery-item .project-link:hover {
+  background-color: #0056b3;
+  text-decoration: none; /* Remove underline on hover */
+}
+
+.gallery-item .project-link i {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 1em; /* Adjust icon size if needed */
+}
+
+/* Contact Page Social Icons (if you added custom styling) */
+.contact-section ul li a .fab,
+.contact-section ul li a .fas {
+  font-size: 1.2em; /* Increase icon size relative to text */
+  margin-right: 5px; /* Add a little space between icon and text */
+  color: #007bff; /* Example: make them blue */
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+}
